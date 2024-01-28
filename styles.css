@@ -1,0 +1,228 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1a1a1a;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Styling the scrollbar track (background) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+/* Styling the scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Roundness of the scrollbar thumb */
+    border: 3px solid #f0f0f0; /* Optional: Border around the scrollbar thumb */
+}
+
+/* Styling the scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+}
+
+/* Optional: Styling the scrollbar corner */
+::-webkit-scrollbar-corner {
+    background-color: #f0f0f0;
+}
+
+
+hr {
+    border: 1px solid #ffffff;
+    margin: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding-top: 20px; /* Adjust as needed */
+}
+
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#connectWallet {
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#mintButton {
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#mintButton:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+#quantityInput {
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 8px 15px; /* Adjust padding as necessary */
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    outline: none; /* Optional: removes the default focus outline */
+}
+
+#quantityInput:hover {
+    background-color: #ffffff;
+    color: #000;
+    /* Optional: add a box-shadow or other effect on hover */
+}
+
+#quantityInput:focus {
+    /* Optional: style for when the input is focused */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+
+#connectWallet:hover, #mintButton:hover {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.gallery {
+    margin: 20px 0;
+}
+
+h3 {
+    margin-bottom: 4em;
+}
+
+p {
+    margin-bottom: 2em;
+    font-size: 1em;
+}
+
+.loader {
+    position: relative;
+    width: 80vw;
+    height: 80vw;
+    max-width: 300px;
+    max-height: 300px;
+    margin: auto;
+}
+
+.ring {
+    width: 47%;
+    height: 47%;
+    position: absolute;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    background-color: transparent;
+    /*animation: pulse 2s infinite ease-in-out;*/
+}
+
+.top { top: 0; left: 25%; }
+.right { left: 50%; top: 25%; }
+.bottom { bottom: 0; left: 25%; }
+.left { left: 0; top: 25%; }
+.center { top: 25%; left: 25%; }
+
+@keyframes pulse {
+    0%, 100% { transform: scale(0.9); }
+    50% { transform: scale(1); }
+}
+
+
+.sticky-footer {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    background-color: #1a1a1a; /* Dark grey background */
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.sticky-header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    width: 90%; /* Ensures the header spans the full width */
+}
+
+.sticky-footer {
+    top: auto;
+    bottom: 0;
+}
+
+.sticky-header button, .sticky-footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.sticky-footer p {
+    margin: 0;
+}
+#logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+.footer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* If you want each section to take equal space */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    h1 { font-size: 1.5em; }
+    p { font-size: 0.9em; }
+    .loader { width: 60vw; height: 60vw; }
+    #connectWallet, #mintButton { font-size: 0.8em; }
+
+    .sticky-header, .sticky-footer {
+        padding: 5px;
+    }
+
+    .sticky-header button, .sticky-footer a {
+        font-size: 0.8em;
+    }
+
+    .container {
+        margin-top: 50px; /* Adjust based on header height */
+        margin-bottom: 50px; /* Adjust based on footer height */
+    }
+
+    /* ... Other responsive adjustments ... */
+}
